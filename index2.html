@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <!-- MATERIAL ICONS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp"
+      rel="stylesheet">
+
+      <!-- STYLESHEET -->
+    <link rel="stylesheet" href="./style2.css">
+
+     <!-- loading the d3.js script -->
+     <script src="https://d3js.org/d3.v7.min.js"></script> 
+
+    <!-- loading the clustered bar chart -->
+    <script src="clusteredbar.js"></script>
+
+    <!-- loading the line chart -->
+    <script src="linechart.js"></script>
+
+    <!-- loading the pie chart -->
+    <script src="piechart.js"></script>
+
+    <!-- loading the bar chart -->
+    <script src="barchart.js"></script>
+
+    <!-- loading the map -->
+    <script src="chloroplethmap.js"></script>
+
+
+
+    
+
+</head>
+<body>
+    <div class="container">
+        <aside>
+            <div class="top">
+                <div class="logo">
+                    <!-- <img src="logo.png"> -->
+                    <h2>DASH<span class="primary">BOARD</span></h2>
+                </div>
+                <div class="close" id="close-btn">
+                    <span class="material-icons-sharp">close</span>
+                </div>
+            </div>
+
+            <div class="sidebar">
+                <a href="#" >
+                    <span class="material-icons-sharp">home</span>
+                    <h3>Home</h3>
+                </a>
+
+                <a href="#" class="active">
+                    <span class="material-icons-sharp">grid_view</span>
+                    <h3>Dashboard</h3>
+                </a>
+            </div>
+        </aside>
+        <!-- ----END OF ASIDE---- -->
+
+        <main>
+            <br>
+            <h1>Dashboard</h1>
+            <br>
+            <!-- <div class="V1"> -->
+            <div class="map">
+                <div id="map"></div>
+            </div>
+            
+            <div class="pie-chart">
+                <label for="dropdown">Entity:</label>
+                <select id="dropdown"></select>   
+                <br><br><br>
+                <div id="PieChart"></div>
+            </div>
+            
+            <div class="clustered-bar-chart">
+                <div>
+                    <label for="data-type">Select:</label>
+                    <select id="data-type">
+                      <option value="Outdoor particulate matter (deaths per 100,000)">Outdoor particulate matter</option>
+                      <option value="Indoor air pollution (deaths per 100,000)">Indoor air pollution</option>
+                      <option value="Outdoor ozone pollution (deaths per 100,000)">Outdoor ozone pollution</option>
+                      <option value="Air pollution (total) (deaths per 100,000)">Air pollution (total)</option>
+                    </select>
+                  </div>
+                 <div id="ClusteredBarChart"></div>
+            </div>
+            <div class="bar-chart">    
+                <label for="entity-select3">Entity:</label>
+                <select id="entity-select3"></select>
+                <div id="chart"></div>
+            </div>
+            <div class="line-chart">
+                <div1>
+                    <label for="entity-select" >Select Entity 1: </label>
+                    <select id="entity-select"></select>
+                </div1>
+                <div2>
+                    <label for="entity2-select" >Select Entity 2: </label>
+                    <select id="entity2-select"></select>
+                </div2>   
+                <div id="linechart"></div>
+            </div>
+        <!-- </div> -->
+        </main>
+        <!-- -----END OF MAIN----- -->
+
+        <div class="right">
+            <div class="top">
+                <button id="menu-btn">
+                    <span class="material-icons-sharp">menu</span>
+                </button>
+                <div class="theme-toggler">
+                    <span class="material-icons-sharp active">light_mode</span>
+                    <span class="material-icons-sharp">dark_mode</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- loading the index.js flie  -->
+    <script src="index.js"></script>
+
+</body>
+</html>
