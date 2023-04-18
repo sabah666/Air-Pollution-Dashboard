@@ -46,7 +46,7 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
                   .attr("height", height);
 
     // Set the color scale
-    const color = d3.scaleSequential(d3.interpolateYlGn)
+    const color = d3.scaleSequential(d3.interpolateTurbo)
                     .domain([0, d3.max(data, function(d) { return parseFloat(d.Total_population); })]);
 
     // Draw the map
