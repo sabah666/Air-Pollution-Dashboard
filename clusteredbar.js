@@ -70,7 +70,7 @@ d3.csv("cleanedDataset.csv", d3.autoType).then(data => {
         .transition()
         .duration(500)
         .attr("width", (d) => xScale(d.sum) - margin.left)
-        .attr("fill", "steelblue");
+        .attr("fill", "#800000");
 
     bars.exit().remove();
 

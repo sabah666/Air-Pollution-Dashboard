@@ -266,9 +266,15 @@ main .pie-chart{
     background: var(--color-light);
     margin-bottom: 1rem;
     border-radius: 20px; 
-    padding: 10px;
+    padding: 15px;
     box-shadow: var(--box-shadow);
+    
 }
+
+.chart-title {
+    fill: var(--color-primary);
+  }
+  
 
 main .bar-chart {
     border-radius: 20px; 

@@ -10,9 +10,9 @@ const height = 350;
 const svg = d3.select("#PieChart")
   .append("svg")
   .attr("width", 470 )
-  .attr("height", height)
+  .attr("height", 370)
   .append("g")
-  .attr("transform", `translate(${width / 2}, ${height / 2})`);
+  .attr("transform", `translate(${width / 2}, ${height / 1.8})`);
 
   // Extract the unique entity names
   const entities = Array.from(new Set(data.map(d => d.Entity)));
@@ -43,6 +43,9 @@ const svg = d3.select("#PieChart")
     const outdoordeaths = d3.sum(filteredData, function(d) { return +d["Outdoor particulate matter (deaths per 100,000)"] + +d["Outdoor ozone pollution (deaths per 100,000)"]; });
     // console.log(outdoorAirPollution);
     
+    
+
+
     // Generate the pie chart
     const pieData = [ indoordeaths, outdoordeaths];
 
@@ -88,6 +91,9 @@ const svg = d3.select("#PieChart")
     .attr("d", arc)
     .transition()
     .duration(750);
+    
+
+    
 
   arcs.exit().remove();
 
@@ -119,7 +125,15 @@ legend
 
   
     // Update the chart title
-    d3.select("#chart-title").text(`Air Pollution for ${selectedEntity}`);
+svg.selectAll(".chart-title").remove();
+svg.append("text")
+  .attr("class", "chart-title")
+  .attr("x", 0)
+  .attr("y", -height/1.85 + 10)
+  .attr("text-anchor", "middle")
+  .style("font-size", "14px")
+  .style("font-weight", "bold")
+  .text(`Deaths in ${selectedEntity}`);
   }
 
   // Call the updateChart function to generate the initial chart
