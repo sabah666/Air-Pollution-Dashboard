@@ -48,12 +48,12 @@ const svg = d3.select("#PieChart")
 
     const color = d3.scaleOrdinal()
       .domain(["Indoor air pollution", "Outdoor air pollution"])
-      .range(["teal", "pink"]);
+      .range(["#563280", "#1e90ff"]);
 
     const pie = d3.pie()(pieData);
 
     const arc = d3.arc()
-      .innerRadius(0)
+      .innerRadius(50)
       .outerRadius(Math.min(width, height) / 2 - 1);
 
     const arcs = svg.selectAll("arc")

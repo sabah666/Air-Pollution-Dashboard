@@ -36,7 +36,7 @@ d3.csv("cleanedDataset.csv", d3.autoType).then(data => {
     .attr("y", 0)
     .attr("width", d => xScale(d.sum) - margin.left)
     .attr("height", yScale.bandwidth())
-    .attr("fill", "steelblue");
+    .attr("fill","#800000");
 
     // add value labels at the end of each bar for when the page loads 
     groups.append("text")

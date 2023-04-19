@@ -223,15 +223,15 @@ rect{
 }
 
 rect:hover{
-    fill: orange;
+    fill: #198d8d;
 }
 
 #entity-select{
-    color: blue;
+    color: #563280;
 }
 
 #entity2-select{
-    color: red;
+    color: #1e90ff;
 }
 
 main .clustered-bar-chart{

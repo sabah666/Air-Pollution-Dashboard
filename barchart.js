@@ -108,7 +108,7 @@
             .duration(1000)
             .attr("y", d => yScale(d.pollution))
             .attr("height", d => innerHeight - yScale(d.pollution))
-            .attr("fill", "#69b3a2")
+            .attr("fill", "#1e90ff")
             // .on("mouseover", function(d) {
             //     d3.select(this)
             //         .attr("fill", "orange");
