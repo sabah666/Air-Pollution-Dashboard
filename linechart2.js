@@ -46,7 +46,7 @@
       .range([margin.left, width - margin.right]);
   
     const yScale = d3.scaleLinear()
-      .domain([0, (maxAirPollution)/2])
+      .domain([0, (maxAirPollution)/10])
       .range([height - margin.bottom, margin.top]);
   
     const xAxis = d3.axisBottom(xScale);
@@ -99,7 +99,7 @@ d3.select("#entity2-select")
         
       const xAxisGroup = svg.append("g")
         .attr("class", "x-axis")
-        .attr("transform", "translate(0, 450)");
+        .attr("transform", "translate(-10, 450)");
         
       const yAxisGroup = svg.append("g")
         .attr("class", "y-axis")
@@ -130,7 +130,7 @@ d3.select("#entity2-select")
             .attr("x", -(height - margin.top - margin.bottom) / 2 - margin.top)
             .attr("y", margin.left / 5)
             .attr("text-anchor", "middle")
-            .text("Deaths due to Total Air Pollution");
+            .text("Deaths due to Total Air Pollution * 10");
 
             const initialEntity1 = entities[0];
             const initialEntity2 = entities[0];

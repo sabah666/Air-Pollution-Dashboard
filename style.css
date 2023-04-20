@@ -268,11 +268,12 @@ main .pie-chart{
     border-radius: 20px; 
     padding: 15px;
     box-shadow: var(--box-shadow);
+    /* : center; */
     
 }
 
-.chart-title {
-    fill: var(--color-primary);
+#Chart-title {
+    color: var(--color-primary);
   }
   
 

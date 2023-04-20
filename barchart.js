@@ -100,7 +100,7 @@
         bars.enter()
             .append("rect")
             .attr("class", "bar")
-            .attr("x", d => xScale(d.year))
+            .attr("x", d => xScale(d.year)+50)
             .attr("y", innerHeight)
             .attr("width", xScale.bandwidth())
             .attr("height", 0)
