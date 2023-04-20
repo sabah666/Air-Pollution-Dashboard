@@ -67,7 +67,7 @@ const svg = d3.select("#PieChart")
     const filteredData = data.filter(d => d.Entity === selectedEntity);
     // const indoorAirPollution = filteredData[0]["Indoor air pollution (deaths per 100,000)"];
     // const outdoorAirPollution = +filteredData[0]["Outdoor particulate matter (deaths per 100,000)"] + +filteredData[0]["Outdoor ozone pollution (deaths per 100,000)"];
-    title.text(`Deaths in ${selectedEntity} due to:`)
+    title.text(`Deaths in ${selectedEntity} due to Air Pollution:`)
     .style("font-size", "18px");
 
     const indoordeaths = d3.sum(filteredData, function(d) { return +d["Indoor air pollution (deaths per 100,000)"]; });
