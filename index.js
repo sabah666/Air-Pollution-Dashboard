@@ -1,6 +1,6 @@
 const themeToggler = document.querySelector(".theme-toggler");
 
-// change theme 
+// change theme and give active status to the selected one
 themeToggler.addEventListener('click',()=>{
     document.body.classList.toggle('dark-theme-variables');
 

@@ -3,9 +3,6 @@
 /* ROOT VARIABLES */
 :root{
     --color-primary:#7380ec;
-    --color-danger:#ff7782;
-    --color-success:#41f1b6;
-    --color-warning:#ffbb55;
     --color-white:#fff;
     --color-info-dark:#7d8da1;
     --color-info-light:#dce1eb;
@@ -76,10 +73,6 @@ a{
      color: var(--color-dark);
 }
 
-/* img{
-    display: block;
-    width: 100%;
-} */
 
 h1{
     font-weight: 800;
@@ -119,17 +112,6 @@ b{
     color: var(--color-primary);
 }
 
-.danger{
-    color: var(--color-danger);
-}
-
-.success{
-    color: var(--color-success);
-}
-
-.warning{
-    color: var(--color-warning);
-}
 
 
 aside{
@@ -137,7 +119,6 @@ aside{
 }
 
 aside .top{
-    /* background: white; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -218,6 +199,7 @@ aside .sidebar a:hover span{
 }
 /* END OF SIDEBAR */
 
+/* adding hover and transition to all the rect elemets */
 rect{
     transition: height 0.3s ease-out;
 }
@@ -226,23 +208,49 @@ rect:hover{
     fill: #198d8d;
 }
 
+/* giving color for line chart dropwon menu 1 */
 #entity-select{
     color: #563280;
+    margin-right: 1rem;
+    border-radius: 20px; 
+    padding: 5px;
 }
 
+/* giving color for line chart dropwon menu 2 */
 #entity2-select{
     color: #1e90ff;
+    margin-right: 1rem;
+    border-radius: 20px; 
+    padding: 5px;
+}
+
+/* dropdown for pie chart */
+#dropdown{
+    margin-right: 1rem;
+    border-radius: 20px; 
+    padding: 5px;
+}
+
+/* dropdown for clustered bar chart */
+#data-type{
+    margin-right: 1rem;
+    border-radius: 20px; 
+    padding: 5px;
+}
+
+/* dropdown for bar chart */
+#entity-select3{
+    margin-right: 1rem;
+    border-radius: 20px; 
+    padding: 5px;
 }
 
 main .clustered-bar-chart{
     display: inline-block;
     background: var(--color-light);
     margin-right: 1rem;
-    /* gap: 1rem; */
-    /* margin-top: 1rem; */
     margin-bottom: 1rem;
     margin-left: 6rem;
-    /* border: solid 1px black; */
     border-radius: 20px; 
     padding: 10px;
     box-shadow: var(--box-shadow);
@@ -251,11 +259,10 @@ main .clustered-bar-chart{
 main .line-chart{
     display: block;
     background: var(--color-light);
-    height: 86%;
+    height: 87%;
     width: 100%;
     margin-top: 1rem;
     margin-bottom: 1rem;
-    /* to make it look big */
     border-radius: 20px; 
     padding: 10px;
     box-shadow: var(--box-shadow);
@@ -268,10 +275,9 @@ main .pie-chart{
     border-radius: 20px; 
     padding: 15px;
     box-shadow: var(--box-shadow);
-    /* : center; */
-    
 }
 
+/* for pie chart */
 #Chart-title {
     color: var(--color-primary);
   }
@@ -288,7 +294,6 @@ main .bar-chart {
 main .map{
     background: var(--color-light);
     margin-bottom: 1rem;
-    /* margin-top: 1rem; */
     box-shadow: var(--box-shadow);
     border-radius: 20px; 
     padding: 10px;
@@ -342,8 +347,6 @@ main .map{
 .tooltip {
     position: absolute;
     background-color: white;
-    /* border: 1px solid gray;
-    border-radius:2px; */
     border-radius: 20px; 
     padding: 10px;
     box-shadow: var(--box-shadow);

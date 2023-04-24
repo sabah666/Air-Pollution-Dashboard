@@ -1,9 +1,8 @@
-// import { json, csv } from 'd3';
-
 // Load the geojson data
-d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson").then(function(geojson) {
+d3.json("world-map.geojson").then(function(geojson) {
   // Load the csv data
   d3.csv("cleanedDataset.csv").then(function(data) {
+
     // Merge the geojson and csv data
     geojson.features = geojson.features.filter(function(d) { return d.properties.name != "Antarctica" });
     for (var i = 0; i < data.length; i++) {
@@ -31,25 +30,26 @@ d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/w
                       .attr("class", "tooltip")
                       .style("opacity", 0);
 
-    // Set the projection and path
+    // Set the projection 
     const projection = d3.geoMercator()
                          .scale(130)
                          .translate([width / 2, height / 1.5]);
 
+    // Set the path    
     const path = d3.geoPath()
                    .projection(projection);
 
-    // Create the SVG element and set its dimensions
+    // Create the SVG element and assign its dimensions
     const svg = d3.select("#map")
                   .append("svg")
                   .attr("width", width)
                   .attr("height", height);
 
-    // Set the color scale
+    // Set the color scale for each country
     const color = d3.scaleSequential(d3.interpolateTurbo)
                     .domain([0, d3.max(data, function(d) { return parseFloat(d.Total_population); })]);
 
-    // Draw the map
+    // create the map
     svg.selectAll("path")
        .data(geojson.features)
        .join("path")
