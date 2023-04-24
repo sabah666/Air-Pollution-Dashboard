@@ -32,21 +32,27 @@
 
         
   const updateChart = function(entity1, entity2) {
-  const filteredData1 = data.filter(d => d.Entity === entity1);
-  const filteredData2 = data.filter(d => d.Entity === entity2);
-
-  const xScale = d3.scaleLinear()
-    .domain([0, d3.max(filteredData1.concat(filteredData2), d => +d.Total_population)])
-    .range([50, 750]);
-        
-  const yScale = d3.scaleLinear()
-    .domain([0, d3.max(filteredData1.concat(filteredData2), d => +d["Air pollution (total) (deaths per 100,000)"])])
-    .range([450, 50]);
-        
-  const xAxis = d3.axisBottom(xScale);
-  const yAxis = d3.axisLeft(yScale);
-
-  svg.select(".x-axis")
+    const filteredData1 = data.filter(d => d.Entity === entity1);
+    const filteredData2 = data.filter(d => d.Entity === entity2);
+  
+    const maxPopulation = d3.max(filteredData1.concat(filteredData2), d => +d.Total_population);
+    const maxAirPollution = d3.sum(
+      filteredData1.concat(filteredData2), 
+      d => +d["Air pollution (total) (deaths per 100,000)"]
+    );
+  
+    const xScale = d3.scaleLinear()
+      .domain([0, maxPopulation])
+      .range([margin.left, width - margin.right]);
+  
+    const yScale = d3.scaleLinear()
+      .domain([0, (maxAirPollution)/10])
+      .range([height - margin.bottom, margin.top]);
+  
+    const xAxis = d3.axisBottom(xScale);
+    const yAxis = d3.axisLeft(yScale);
+  
+    svg.select(".x-axis")
       .transition()
       .duration(1000)
       .call(xAxis);
@@ -71,8 +77,10 @@
       .transition()
       .duration(1000)
       .attr("d", lineGenerator);
-
-};
+  };
+  
+  
+  
 
 d3.select("#entity-select")
   .on("change", function() {
@@ -91,7 +99,7 @@ d3.select("#entity2-select")
         
       const xAxisGroup = svg.append("g")
         .attr("class", "x-axis")
-        .attr("transform", "translate(0, 450)");
+        .attr("transform", "translate(-10, 450)");
         
       const yAxisGroup = svg.append("g")
         .attr("class", "y-axis")
@@ -122,7 +130,7 @@ d3.select("#entity2-select")
             .attr("x", -(height - margin.top - margin.bottom) / 2 - margin.top)
             .attr("y", margin.left / 5)
             .attr("text-anchor", "middle")
-            .text("Deaths due to Total Air Pollution");
+            .text("Deaths due to Total Air Pollution * 10");
 
             const initialEntity1 = entities[0];
             const initialEntity2 = entities[0];
