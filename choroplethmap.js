@@ -1,6 +1,6 @@
 // Load the geojson data
 d3.json("world-map.geojson").then(function(geojson) {
-  // Load the csv data
+  // Loading the csv data
   d3.csv("cleanedDataset.csv").then(function(data) {
 
     // Merge the geojson and csv data
